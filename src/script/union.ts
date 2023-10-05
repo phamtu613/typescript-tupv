@@ -11,13 +11,11 @@
     name: string;
     age: number;
     score: number | string;
-    extra?:
-      | {
-          name: string;
-        }
-      | {
-          school: string;
-        };
+    extra?: {
+      name: string;
+    } & {
+      school: string;
+    };
   }[] = [
     {
       name: "Tu",
@@ -25,6 +23,7 @@
       score: 10,
       extra: {
         name: "TuPV",
+        school: "Dh Su Pham",
       },
     },
     {
@@ -33,6 +32,7 @@
       score: "Muoi",
       extra: {
         school: "Dh Su Pham",
+        name: "TuPV",
       },
     },
     {

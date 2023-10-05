@@ -8,3 +8,9 @@ const student: {
   age: 20,
   address: "SG",
 };
+
+// const student: Record<string, any> = {
+//   name: "Tu",
+//   age: 20,
+//   address: "SG",
+// };
