@@ -8,13 +8,14 @@ function checkTypeOf(value: number) {
 
 console.log(checkTypeOf(5));
 
-type A = {
+type AAA = {
   x: number;
 };
+
 type B = {
   y: number;
 };
-type C = A | B;
+type C = AAA | B;
 
 function checkInfo(info: C) {
   if ("x" in info) {
