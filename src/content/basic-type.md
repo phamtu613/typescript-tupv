@@ -40,6 +40,8 @@ typeof 10; // number
 typeof Example;
 ```
 
+- Type `null` chỉ sử dụng được cho giá trị null
+- Type `undefined` chỉ sử dụng được cho giá trị undefined
 - Type `never` không gán được bất kỳ giá trị nào
 - Type `never` được sử dụng cho các giá trị hoặc hàm không bao giờ hoàn thành hoặc không bao giờ trả về giá trị
 
@@ -102,7 +104,8 @@ function checkInfo(info: C) {
 ```
 
 - Khi chúng ta sử dụng dấu : (conlon) để khai báo type thì cái type nó sẽ mạnh hơn cái value (Type beats Value) Matt Pocock
-- `satisfies` thì cái Value sẽ đánh bại cái Type (Value beats Type)
+- `satisfies` thì cái Value sẽ đánh bại cái Type (Value beats Type). Nó sẽ đinh nghĩa Type cho chúng ta dựa vào giá trị của mình
+
 - Khi sử dụng `satisfies` thì giúp code chúng ta rõ ràng hơn, nhưng nó sẽ cố định Type luôn
 - `as const` sẽ biến giá trị thành readonly, tức là chỉ đọc chứ không thể thêm xóa cập nhật
 
@@ -114,3 +117,16 @@ scores.push(6); // Error Property 'push' does not exist on type 'readonly [1, 2,
 
 - `as Type` nghĩa là chúng ta đang nói dối Typescript rằng, mày tin tao đi, tao biết nó là type gì mà
 - Có thể mở rộng Type ra hơn nhưng cũng có thể dễ gây lỗi hơn
+- Tuples type là type được xác định trước độ dài và type cho từng index cụ thể
+- Không sử dụng được as const cho Tuples
+- Để Tuples chi đọc thi thêm từ khóa readonly ở phía trước
+-
+
+```typescript
+const information: readonly [
+  count: number,
+  username: string,
+  isAdmin: boolean
+] = [--100, "200", false];
+// information.push(100); // Error cause readonly
+```
